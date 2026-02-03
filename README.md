@@ -27,19 +27,25 @@ col1, col2, really_long_col3
 2,shorter, false
 ```
 
-output.md (when rendered)
-```md
+output.md
+```
 | col1 |       col2 |  really_long_col3 |
 |------|------------|-------------------|
 |    1 | long entry |              true |
 |    2 |    shorter |             false |
 ```
 
-
-output.md (as text)
+## Repo structure
 ```
-| col1 |       col2 |  really_long_col3 |
-|------|------------|-------------------|
-|    1 | long entry |              true |
-|    2 |    shorter |             false |
+.
+├── .gignore
+├── .github
+│   └── workflows
+│       └── release.yml  # Automated release on version tags
+├── .goreleaser.yml      # Multi-platform build configuration
+├── go.mod               # Module definition (no external deps)
+├── main.go              # csv2md CLI implementation
+├── main_test.go         # unit tests for cli implementation
+├── LICENCE
+└── README.md
 ```
