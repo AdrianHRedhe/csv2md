@@ -32,7 +32,7 @@ brews:
       owner: adrianhredhe
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    folder: Formula
+    directory: Formula
     homepage: https://github.com/adrianhredhe/csv2md
     description: "Convert CSV files to Markdown tables"
     license: MIT
