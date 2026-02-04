@@ -25,3 +25,18 @@ archives:
 
 checksum:
   name_template: "checksums.txt"
+
+brews:
+  - name: csv2md
+    repository:
+      owner: adrianhredhe
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    folder: Formula
+    homepage: https://github.com/adrianhredhe/csv2md
+    description: "Convert CSV files to Markdown tables"
+    license: MIT
+    test: |
+      system "#{bin}/csv2md", "-h"
+    install: |
+      bin.install "csv2md"
