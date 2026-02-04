@@ -3,6 +3,12 @@
 Convert CSV files to Markdown tables.
 
 ## Installation
+### Using homebrew
+```bash
+brew install adrianhredhe/tap/csv2md
+```
+
+### Using go
 ```bash
 go install github.com/adrianhredhe/csv2md@latest
 ```
