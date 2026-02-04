@@ -31,6 +31,11 @@ func getSrc() (io.ReadCloser, error) {
 	if args := flag.Args(); len(args) > 0 {
 		return os.Open(args[0])
 	}
+	// check if stdin is just an empty terminal
+	stat, _ := os.Stdin.Stat()
+	if (stat.Mode() & os.ModeCharDevice) != 0 {
+		return nil, fmt.Errorf("No input provided. Usage: csv2md [input.csv] [output.md] or cat data.csv | csv2md")
+	}
 	// stdin
 	return io.NopCloser(os.Stdin), nil
 }
